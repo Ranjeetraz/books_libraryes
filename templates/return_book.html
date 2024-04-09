@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .image{
+          width:100%;
+          height: 350PX;
+        }
+        .demo {
+        margin: 0 auto;
+        
+        background: lightblue;
+        font-size: 20px;
+        
+        color:black;
+        }
+        li{
+          list-style-type: none;
+        }
+        .nav{
+         
+          background-color:rgb(255, 255, 185);
+      
+          float: left;
+          margin-left: 20px;
+        }
+        a{
+          text-decoration: none;
+        }
+  
+        .demo button{
+          
+        background: green;
+      
+        color: white;
+        border-radius: 5px;
+        width: 100px;
+        height: 30px;
+        margin: 10px;
+        
+      }
+      .demob button:focus{
+        background: yellow;
+        color: red;
+        cursor: pointer;
+      }
+    
+      
+  
+      </style>
+    </head>
+  <body>
+    
+  
+  <marquee behavior="scroll" bgcolor="blue" scrollamount="15" loop="100"></marqee><h1> Chandigarh Group of Colleges  ,
+      Industrial Area , Sahibzada Ajit Singh Nagar , Book Library Management System Project:</h1></marquee>
+      <ul>
+    
+        <!-- <li class="nav"><a href="http://127.0.0.1:8000/">Registation </a></li>
+        <li class="nav" ><a href="http://127.0.0.1:8000/login">Login</a></li> -->
+        
+        <li class="nav" ><a href="http://127.0.0.1:8000/add_book">Add a book</a></li>
+        <li class="nav" ><a href="http://127.0.0.1:8000/booklist">Book List</a></li>
+        <li class="nav" ><a href="http://127.0.0.1:8000/transaction">Book a transaction</a></li>
+        <li class="nav" ><a href="http://127.0.0.1:8000/transa_book">Transaction Book History</a></li>
+        <li class="nav"><a href="http://127.0.0.1:8000/book_return">Book a Return </a></li>
+        <li class="nav"><a href="http://127.0.0.1:8000/return_book_list">Return Book History </a></li>
+        <li class="nav"><a href="http://127.0.0.1:8000/course_add">Add Course Details </a></li>
+        <li class="nav"><a href="http://127.0.0.1:8000/course_details_history">Course Details History </a></li>
+    
+        <li class="nav" ><a href="http://127.0.0.1:8000/">Logout</a></li>
+        
+        </ul>
+      
+      </body>
+      <img class="image" src="https://www.reviewadda.com/assets/uploads/article_images/Chandigarh_Group_Colleges_1.jpg" alt="banner">
+
+</body>    
+{% block content %}
+  <center>
+  <form class="demo" method="post">
+    <h1>Return a Book</h1>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Return Book</button>
+  </form>
+</center>
+{% endblock %}
+
+</html>
